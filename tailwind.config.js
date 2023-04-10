@@ -1,18 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
+  daisyui: {
+    themes: ["cupcake", "synthwave", "valentine", "dracula", "cmyk"],
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dracula",
+    lightTheme: "cupcake",
   },
-  plugins: [],
-}
+  theme: {
+    extend: {},
+  },
+  plugins: [require("daisyui")],
+};
+
+/* 
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
+
+useEffect(() => {
+  themeChange(false)
+  // 👆 false parameter is required for react project
+}, [])
+*/
